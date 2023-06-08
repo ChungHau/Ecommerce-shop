@@ -1,9 +1,10 @@
+import Intro from "../components/Intro/Intro";
 import Layout from "../components/Layout/Layout";
 
 const HomePage = () => {
   return (
     <Layout>
-      <div></div>
+      <Intro />
     </Layout>
   );
 };

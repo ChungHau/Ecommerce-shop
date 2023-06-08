@@ -18,7 +18,7 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed bg-dark bg-opacity-50 justify-between w-full h-28 border-b-2 border-gray-600">
+    <header className="fixed z-10 top-0 left-0 bg-dark bg-opacity-80 justify-between w-full h-28 border-b-2 border-gray-600">
       <div className="h-full pt-4 w-11/12 lg:w-4/5 m-auto flex flex-col ">
         <div className="w-full h-2/6 flex justify-between">
           <Link to="/" className="hidden md:block text-xl lg:text-2xl text-cyan-400">
@@ -41,27 +41,27 @@ const Header = () => {
               Products
             </Link>
           </nav>
-          <div className="flex justify-end">
+          <div className="flex gap-4 justify-end">
             <div className="relative">
               <AiOutlineHeart className="h-6 w-6 cursor-pointer" />
-              <div className="absolute top-[-13px] right-[-13px] h-5 w-5 border-2 rounded-full border-red-500 bg-red-500 flex items-center justify-center ">
+              <div className="absolute top-[-13px] right-[-13px] h-5 w-5 border-2 rounded-full border-purple-500 bg-purple-500 flex items-center justify-center ">
                 23
               </div>
             </div>
-            <div className="relative ml-3">
+            <div className="relative">
               <AiOutlineShoppingCart className="h-6 w-6 cursor-pointer" />
-              <div className="absolute top-[-13px] right-[-13px] h-5 w-5 border-2 rounded-full border-red-500 bg-red-500 flex items-center justify-center ">
+              <div className="absolute top-[-13px] right-[-13px] h-5 w-5 border-2 rounded-full border-purple-500 bg-purple-500 flex items-center justify-center ">
                 99
               </div>
             </div>
             {isLogin ? (
-              <RxAvatar className="h-6 w-6 cursor-pointer ml-3" />
+              <RxAvatar className="h-6 w-6 cursor-pointer" />
             ) : (
               <>
-                <Link to="/login" className="ml-3 hover:text-cyan-500">
+                <Link to="/login" className="hover:text-cyan-500">
                   Login
                 </Link>
-                <Link to="/sign-up" className="ml-3 hover:text-cyan-500">
+                <Link to="/sign-up" className="hover:text-cyan-500">
                   Signup
                 </Link>
               </>
@@ -89,7 +89,7 @@ const Header = () => {
           </div>
         </form>
       </div>
-    </div>
+    </header>
   );
 };
 
