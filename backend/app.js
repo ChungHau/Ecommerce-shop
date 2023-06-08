@@ -17,10 +17,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-process.on("uncaughtException", (err) => {
-  console.log(`Error: ${err.message}`);
-  console.log("shutting down the server for handling uncaught exception");
-});
+// process.on("uncaughtException", (err) => {
+//   console.log(`Error: ${err.message}`);
+//   console.log("shutting down the server for handling uncaught exception");
+// });
 
 app.use("/api/v2/user", userRoutes);
 
