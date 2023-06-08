@@ -1,8 +1,7 @@
 import { Route, Routes } from "react-router-dom";
+import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
 import SignupPage from "../pages/SignupPage";
-import HomePage from "../pages/HomePage";
-
 const Router = () => {
   return (
     <Routes>
