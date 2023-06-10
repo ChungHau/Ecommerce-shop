@@ -7,6 +7,9 @@ export default {
         dark: "#111",
         "main-gray": "#1a1c1e",
       },
+      // gridTemplateColumns: {
+      //   18: "fit-content(20%) fit-content(20%) 1fr",
+      // },
     },
   },
   plugins: [],

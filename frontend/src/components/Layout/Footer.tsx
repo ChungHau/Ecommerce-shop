@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="w-full text-center text-white">
-      <div className="w-full bg-gray-900">
+    <footer className="w-full text-center text-white mt-5">
+      <div className="w-full bg-gray-950">
         <div className="sm:w-11/12 lg:w-4/5 m-auto">
           <div className="pt-9 pb-9">
             <div className="flex gap-6 justify-center">
@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="w-full bg-gray-800">
+      <div className="w-full bg-gray-black">
         <div className="sm:w-11/12 lg:w-4/5 m-auto">
           <div className="p-4 text-center text-gray-300">
             © 2023 Copyright: &nbsp;

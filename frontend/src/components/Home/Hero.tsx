@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-const Intro = () => {
+const Hero = () => {
   return (
-    <section className="relative h-[706px] w-full hidden sm:block">
+    <section className="relative h-[500px] w-full hidden sm:block">
       <div className="h-full w-full relative bg-black after:content-[''] after:bg-[url('src/assets/images/mountain.jpg')] after:bg-cover after:bg-center after:absolute after:inset-0 after:opacity-30"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-5 w-11/12 lg:w-4/5 m-auto">
         <div className="text-2xl lg:text-3xl flex flex-col gap-4 items-center">
@@ -19,4 +19,4 @@ const Intro = () => {
   );
 };
 
-export default Intro;
+export default Hero;
