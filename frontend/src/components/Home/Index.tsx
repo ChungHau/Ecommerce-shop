@@ -1,5 +1,6 @@
-import BestSelling from "../BestSelling/BestSelling";
+import BestSelling from "./BestSelling";
 import Categories from "./Categories";
+import DailyDiscover from "./DailyDiscover";
 import Hero from "./Hero";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <Hero />
       <Categories />
       <BestSelling />
+      <DailyDiscover />
     </>
   );
 };

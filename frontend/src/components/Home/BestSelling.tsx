@@ -8,7 +8,7 @@ const breakpointsOpt = {
     slidesPerView: 2,
     slidesPerGroup: 2,
   },
-  785: {
+  768: {
     slidesPerView: 3,
     slidesPerGroup: 3,
   },
