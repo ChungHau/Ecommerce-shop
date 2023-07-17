@@ -30,9 +30,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //   console.log("shutting down the server for handling uncaught exception");
 // });
 
-app.use("/user", userRoutes);
-
 connectDatabase();
+
+app.use("/user", userRoutes);
 
 const server = app.listen(process.env.PORT, () => {
   console.log(`Server is running on http://localhost:${process.env.PORT}`);
