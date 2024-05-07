@@ -25,10 +25,10 @@ app.use(cookieParser());
 app.use(express.static(__dirname));
 
 app.use(bodyParser.urlencoded({ extended: true }));
-// process.on("uncaughtException", (err) => {
-//   console.log(`Error: ${err.message}`);
-//   console.log("shutting down the server for handling uncaught exception");
-// });
+process.on("uncaughtException", (err) => {
+  console.log(`Error: ${err.message}`);
+  console.log("shutting down the server for handling uncaught exception");
+});
 
 connectDatabase();
 
