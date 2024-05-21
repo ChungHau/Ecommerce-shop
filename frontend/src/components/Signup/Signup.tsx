@@ -38,7 +38,7 @@ const Signup = () => {
       username: "",
       email: "",
       password: "",
-      avatar: null,
+      avatar: null ,
     },
     resolver: zodResolver(schema),
   });
@@ -50,14 +50,19 @@ const Signup = () => {
   } = form;
 
   const onSubmit = async (data: FormValues) => {
-    // if (data.avatar !== null && data.avatar !== undefined) {
-    //   newData.append("password", data.avatar[0]);
-    //   console.log(data.avatar[0]);
-    // }
+    if (data.avatar !== null && data.avatar !== undefined) {
+      console.log(data);
+    }
+    formData.set("username", data.username)
+    formData.set("email", data.email)
+    formData.set("password", data.password)
     try {
       const res = await axios("http://localhost:8000/user/create-user", {
         method: "POST",
-        data: data,
+        data: formData,
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
       });
       console.log(res);
     } catch (err) {
@@ -67,35 +72,17 @@ const Signup = () => {
 
   const handleFileInputChange = (e: React.ChangeEvent<HTMLInputElement> | null) => {
     if (!e?.target.files) return;
-    const file = e.target.files[0];
-
-    formData.append("avatar", file);
-    console.log(formData.get("avatar"));
-
+    const file = e.target.files[0]
+    formData.set('avatar', file);
+    console.log(formData.get('avatar'));
+    
     setAvatar(file);
-  };
-
-  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:8000/user/create-user", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      })
-      .then((res) => console.log(formData.get("avatar")))
-      .catch((err) => console.log(err));
   };
 
   return (
     <div className="min-h-screen bg-dark flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <form onSubmit={submitHandler} encType="multipart/form-data">
-        <input type="file" name="avatar" onChange={handleFileInputChange} />
-        <button className="" type="submit">
-          Submit
-        </button>
-      </form>
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-2xl sm:text-3xl font-extrabold text-white">Register as a new user</h2>
-        form
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-main-gray py-8 px-6 shadow sm:rounded-lg sm:px-10">
@@ -147,7 +134,7 @@ const Signup = () => {
 
             <div>
               <div className="mt-2 flex items-center justify-between gap-5">
-                <span className="inline-block self-center h-12 w-12 sm:h-16 sm:w-16 rounded-full overflow-hidden">
+                <span className="self-center h-12 w-12 sm:h-16 sm:w-16 rounded-full overflow-hidden shrink-0">
                   {avatar ? (
                     <img
                       src={URL.createObjectURL(avatar)}
@@ -168,7 +155,7 @@ const Signup = () => {
                     id="file-input"
                     {...register("avatar")}
                     accept=".jpg,.jpeg,.png"
-                    // onChange={handleFileInputChange}
+                    onChange={handleFileInputChange}
                     className="sr-only"
                   />
                 </label>
