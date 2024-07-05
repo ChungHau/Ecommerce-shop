@@ -1,10 +1,9 @@
-import Home from "../components/Home/Index";
-import Layout from "../components/Layout/Layout";
+import Layout from "./Layout/Layout";
 
 const HomePage = () => {
   return (
     <Layout>
-      <Home />
+      <h1>Home</h1>
     </Layout>
   );
 };

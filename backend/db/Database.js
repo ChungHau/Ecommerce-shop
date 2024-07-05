@@ -9,5 +9,4 @@ const connectDatabase = () => {
       console.log(`mongo connected with server: ${data.connection.host}`);
     }).catch(err => console.log(err))
   };
-  
   export default connectDatabase

@@ -1,9 +1,12 @@
-// import upload from "../middleware/multer.js";
 import express from "express";
-import { createUser } from "../controller/user.js";
-import upload from "../middleware/multer.js";
+import { activateUser, createUser, getUser, loginUser } from "../controller/user.js";
+import catchAsyncErrors from '../middleware/catchAsyncErrors.js'
+import { isAuthenticated } from "../middleware/auth.js";
 const router = express.Router();
 
-router.post("/create-user", upload.single("avatar"), createUser);
+router.post("/create-user", catchAsyncErrors(createUser));
+router.post("/activation", catchAsyncErrors(activateUser));
+router.post("/login-user", catchAsyncErrors(loginUser));
+router.post("/get-user", catchAsyncErrors(isAuthenticated), );
 
 export default router;
